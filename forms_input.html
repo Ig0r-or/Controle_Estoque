@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>almoxeriffe</title>
+    <style>body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+      
+      .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: linear-gradient(to right, #4caf50, #2196f3);
+        color: white;
+        height: 60px;
+        padding: 0 20px;
+      }
+      
+      .header-icon img {
+        width: 60px;
+        height: auto;
+      }
+      
+      .header-title {
+        flex-grow: 1;
+        text-align: left;
+        font-size: 20px;
+        font-weight: bold;
+      } 
+      iframe{
+        padding-bottom: -20px;
+      }
+    .form-container{ 
+        background-color: #fff; 
+        padding: 20px; 
+        border-radius: 8px; 
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+        width: 30%; 
+        max-width: 300px; 
+        margin-top: 40px;
+        margin-left: 40px;
+        display: block;
+        } 
+    .form-group{ 
+        margin-bottom: 15px; 
+        } 
+    .form-group label{ 
+        display: block; 
+        margin-bottom: 5px; 
+        font-weight: bold; 
+        } 
+    .form-group input, .form-group select, .form-group textarea{ 
+        width: 100%; 
+        padding: 3px; 
+        border: 1px solid #ccc; 
+        border-radius: 4px; 
+        } 
+    .form-group textarea{ 
+        resize: vertical; 
+        } 
+    .form-group .button{ 
+        background-color: #4CAF50; 
+        color: white; 
+        padding: 10px 20px; 
+        border: none; 
+        border-radius: 4px; 
+        cursor: pointer;
+        display: flex; 
+        margin-left: 40%;
+        } 
+    .form-group .button:hover{ 
+        background-color: #45a049; 
+        } 
+    .email-erro {
+        border: 2px solid red;
+        }
+        </style>
+      </style>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cabeçalho Personalizado</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-icon">
+      <img src="db7b8b7d-e7c2-4dd6-a55d-76ed85275d8c.png" alt="Ícone" />
+    </div>
+    <div class="header-title">Entrada</div>
+  </header>
+  <div class="form-container"> 
+    <form> 
+        <div class="form-group"> 
+            <label for="nome">Resposável</label> 
+            <input type="text" id="nome" name="nome">
+         </div>
+         <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email">
+         </div>
+         <div class="form-group"> 
+            <label for="categoria">Item</label> 
+            <select id="categoria" name="categoria"> 
+                <option value="Sacola Pequena">Sacola Pequena</option> 
+                <option value="Sacola Grande">Sacola Grande</option>
+                <option value="Caneca">Caneca</option>
+                <option value="Pasta IF">Pasta IF</option> 
+                <option value="Garafinha squezee">Garafinha squezee</option> 
+                <option value="Caneta Madeira">Caneta Madeira</option>
+                <option value="Caneta Papel">Caneta Papel</option>
+                <option value="Caneta Metal">Caneta Metal</option>
+                <option value="Bloco Grande">Bloco Grande</option>
+                <option value="Bloco Pequeno">Bloco Pequeno/com caneta</option>
+                <option value="Chaveiro">Chaveiro</option>
+                <option value="Porta Crachá">Porta Crachá</option>
+                <option value="Camisa de Expedição">Camisa de Expedição</option>
+                <option value="Caderno Pronatec">Caderno Pronatec</option>
+                <option value="Microfone Boya">Microfone Boya</option>
+                <option value="Condemer Microphone by-un01">Condemer Microphone by-un01</option>
+                <option value="Para Filtro Water Dispenser">Para Filtro Water Dispenser</option>
+                <option value="Chapéu Expedição">Chapéu Expedição</option>
+                <option value="Mochila PROEX">Mochila PROEX</option>
+                <option value="Crachá IF sul">Crachá IF sul</option>
+                <option value="Panfleto Expedição">Panfleto Expedição</option>
+                <option value="Camisa IF Formação inicial">Camisa IF Formação inicial</option>
+                <option value="Colete Expedição">Colete Expedição</option>
+                <option value="Revista de extensão">Revista de extensão</option>
+                <option value="Pasta de notebook">Pasta de notebook</option>
+                <option value="Extenção com Carretel">Extenção com Carretel</option>
+                <option value="Extenção com 3 tomadas">Extenção com 3 tomadas</option>
+                <option value="Adaptador T">Adaptador T</option>
+                <option value="Garrafa Térmica">Garrafa Térmica</option> 
+                <option value="Canecas PREPARA">Canecas PREPARA</option>
+                <option value="Camisas PREPARA">Camisas PREPARA</option>
+                <option value="Sacolas ENCONTRO EXTENSÃO">Sacolas ENCONTRO EXTENSÃO</option>
+                <option value="Caderno PREPARA">Caderno PREPARA</option>
+                <option value="Bottom">Bottom</option>
+                <option value="Projector">Projector</option>
+                <option value="Rascunho IF">Rascunho IF</option>
+            </select> 
+        </div>
+         <div class="form-group"> 
+            <label for="quantidade">Quantidade</label> 
+            <input type="number" id="quantidade" name="quantidade"> 
+        </div> 
+<div class="form-group"> 
+            <label for="data">Data</label> 
+            <input type="date" id="data" name="data" step="0.01">
+            </div>
+        <div class="form-group"> 
+            <label for="descricao">Descrição</label>
+            <textarea id="descricao" name="descricao" rows="4"></textarea>
+         </div>
+         <div class="form-group">
+            <a id="mensagem"></a>
+        </div>  
+            <div class="form-group"> 
+                <button type="submit" class="button">Enviar</button> 
+            </div> 
+        </form> 
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const formulario = document.querySelector('form');
+                const mensagem = document.getElementById('mensagem');
+        
+                formulario.addEventListener('submit', function (event) {
+                    event.preventDefault();
+        
+                    const username = formulario.querySelector('#nome').value;
+                    const email = formulario.querySelector('#email').value;
+        
+                    if (username.length < 4) {
+                        mensagem.textContent = 'O nome de usuário deve ter pelo menos 4 caracteres.';
+                        mensagem.style.color = 'red';
+                        return;
+                    }
+        
+                    if (!email.endsWith('@ifsuldeminas.edu.br')) { 
+                        mensagem.textContent = 'Por favor, insira um email válido';
+                        mensagem.style.color = 'red';
+                        formulario.querySelector('#email').style.border = '2px solid red';
+                        return;
+                    }
+                    else{
+                        mensagem.textContent = 'Formulário válido, documento enviado!';
+                        mensagem.style.color = 'green';
+                        formulario.querySelector('#email').classList.remove('email-erro');
+                    }
+                    formulario.querySelector('#email').addEventListener('input', function() {
+                        formulario.querySelector('#email').classList.remove('email-erro');
+                    });
+                });
+            });
+        </script>
+    </div>
+</body>
+</html>
+</body>
+</html>
