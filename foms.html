@@ -46,12 +46,15 @@
         border-radius: 4px; 
         cursor: pointer;
         display: flex; 
-        margin-left: 38%;
+        margin-left: 40%;
         } 
-        .form-group .button:hover 
-        { 
+        .form-group .button:hover{ 
         background-color: #45a049; 
         } 
+        .email-erro {
+        border: 2px solid red;
+        }
+       
         </style>
 </head>
 <body>
@@ -60,6 +63,10 @@
             <div class="form-group"> 
                 <label for="nome">Resposável</label> 
                 <input type="text" id="nome" name="nome">
+             </div>
+             <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email">
              </div>
              <div class="form-group"> 
                 <label for="categoria">Item</label> 
@@ -102,30 +109,59 @@
                     <option value="Rascunho IF">Rascunho IF</option>
                 </select> 
             </div>
-            <div class="form-group"> 
+             <div class="form-group"> 
+                <label for="quantidade">Quantidade</label> 
+                <input type="number" id="quantidade" name="quantidade"> 
+            </div> 
+<div class="form-group"> 
                 <label for="data">Data</label> 
                 <input type="date" id="data" name="data" step="0.01">
                 </div>
-             <div class="form-group"> 
-                <label for="quantidade">Quantidade</label> 
-                <input type="number" id="quantidade" name="quantidade" step="0.01"> 
-            </div> 
-            <div class="form-group"> 
-                <label for="quantidade">Destino</label> 
-                <input type="text" id="destino" name="destino" step="0.01"> 
-            </div>
-            <div class="form-group"> 
-                <label for="consumivel">Consumível?</label> 
-                <input type="checkbox" id="consumivel"name="quantidade" step="0.01"> 
-            </div>
             <div class="form-group"> 
                 <label for="descricao">Descrição</label>
                 <textarea id="descricao" name="descricao" rows="4"></textarea>
-             </div>  
+             </div>
+             <div class="form-group">
+                <a id="mensagem"></a>
+            </div>  
                 <div class="form-group"> 
                     <button type="submit" class="button">Enviar</button> 
                 </div> 
             </form> 
         </div>
+        <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const formulario = document.querySelector('form');
+        const mensagem = document.getElementById('mensagem');
+
+        formulario.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const username = formulario.querySelector('#nome').value;
+            const email = formulario.querySelector('#email').value;
+
+            if (username.length < 4) {
+                mensagem.textContent = 'O nome de usuário deve ter pelo menos 4 caracteres.';
+                mensagem.style.color = 'red';
+                return;
+            }
+
+            if (!email.endsWith('@ifsuldeminas')) { // Restringe ao domínio @ifsuldeminas
+                mensagem.textContent = 'Por favor, insira um email válido do domínio @ifsuldeminas.';
+                mensagem.style.color = 'red';
+                formulario.querySelector('#email').style.border = '2px solid red';
+                return;
+            }
+            else{
+                mensagem.textContent = 'Formulário válido, documento enviado!';
+                mensagem.style.color = 'green';
+                formulario.querySelector('#email').classList.remove('email-erro');
+            }
+            formulario.querySelector('#email').addEventListener('input', function() {
+                formulario.querySelector('#email').classList.remove('email-erro');
+            });
+        });
+    });
+</script>
 </body>
 </html>
