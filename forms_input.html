@@ -5,130 +5,165 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>almoxeriffe</title>
-    <style>body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-      }
-      
-      .header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        background: linear-gradient(to right, #4caf50, #2196f3);
-        color: white;
-        height: 60px;
-        padding: 0 20px;
-      }
-      
-      .header-icon img {
-        width: 60px;
-        height: auto;
-      }
-      
-      .header-title {
-        flex-grow: 1;
-        text-align: left;
-        font-size: 20px;
-        font-weight: bold;
-      } 
-      iframe{
-        padding-bottom: -20px;
-      }
-    .form-container{ 
-        background-color: #fff; 
-        padding: 20px; 
-        border-radius: 8px; 
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
-        width: 30%; 
-        max-width: 300px; 
-        margin-top: 40px;
-        margin-left: 40px;
-        display: block;
-        } 
-    .form-group{ 
-        margin-bottom: 15px; 
-        } 
-    .form-group label{ 
-        display: block; 
-        margin-bottom: 5px; 
-        font-weight: bold; 
-        } 
-    .form-group input, .form-group select, .form-group textarea{ 
-        width: 100%; 
-        padding: 3px; 
-        border: 1px solid #ccc; 
-        border-radius: 4px; 
-        } 
-    .form-group textarea{ 
-        resize: vertical; 
-        } 
-    .form-group .button{ 
-        background-color: #4CAF50; 
-        color: white; 
-        padding: 10px 20px; 
-        border: none; 
-        border-radius: 4px; 
-        cursor: pointer;
-        display: flex; 
-        margin-left: 40%;
-        } 
-    .form-group .button:hover{ 
-        background-color: #45a049; 
-        } 
-    .email-erro {
-        border: 2px solid red;
-        }
-    .button-container{ 
-        margin-right: 20px; 
-        } 
-    .page-button{ 
-        background-color: rgb(255, 255, 255); 
-        color: #4caf50; 
-        border: none; 
-        padding: 10px 20px; 
-        font-size: 16px; 
-        cursor: pointer; 
-        border-radius: 5px; 
-      } 
-    .page-button:hover{ 
-        background-color: #2196f3; 
-        color: white; 
-      }
-      </style>
+    <style>
+       body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to right, #4caf50, #2196f3);
+    color: white;
+    height: 60px;
+    padding: 0 20px;
+}
+
+.header-icon img {
+    width: 60px;
+    height: auto;
+}
+
+.header-title {
+    flex-grow: 1;
+    text-align: left;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.form-container { 
+    background-color: #fff; 
+    padding: 20px; 
+    border-radius: 8px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    width: 30%; 
+    max-width: 300px; 
+    margin-top: 40px;
+    margin-left: 40px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.form-group { 
+    margin-bottom: 15px; 
+} 
+
+.form-group label { 
+    display: block; 
+    margin-bottom: 5px; 
+    font-weight: bold; 
+}
+
+.form-group input, .form-group select, .form-group textarea { 
+    width: 100%; 
+    padding: 3px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+} 
+
+.form-group textarea { 
+    resize: vertical; 
+}
+
+.form-group .button { 
+    background-color: #4CAF50; 
+    color: white; 
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer;
+}
+
+.form-group .button:hover { 
+    background-color: #45a049; 
+}
+
+.email-erro {
+    border: 2px solid red;
+}
+
+.button-container { 
+    margin-right: 20px; 
+}
+
+.page-button { 
+    background-color: rgb(255, 255, 255); 
+    color: #4caf50; 
+    border: none; 
+    padding: 10px 20px; 
+    font-size: 16px; 
+    cursor: pointer; 
+    border-radius: 5px; 
+}
+
+.page-button:hover { 
+    background-color: #2196f3; 
+    color: white; 
+}
+
+#historico-popup {
+    background-color: #fff; 
+    padding: 20px; 
+    border-radius: 8px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    width: 30%; 
+    max-width: 300px; 
+    margin-top: 40px;
+    margin-left: 20px;
+    display: inline-block;
+    vertical-align: top;
+    overflow-y: auto;
+    max-height: 500px;
+}
+
+#historico-popup h2 {
+    margin-top: 0;
+}
+
+#historico {
+    list-style-type: none;
+    padding: 0;
+}
+
+#historico li {
+    background-color: #f4f4f4;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+#historico li:nth-child(odd) {
+    background-color: #e9e9e9;
+}
+    </style>
 </head>
 <body>
-    <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cabeçalho Personalizado</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <header class="header">
-    <div class="header-icon">
-      <img src="db7b8b7d-e7c2-4dd6-a55d-76ed85275d8c.png" alt="Ícone" />
-    </div>
-    <div class="header-title">Entrada</div>
-      <div class="button-container"> 
-        <button class="page-button" onclick="changePage()">Tabela</button> 
-    </div>
-  </header>
-  <div class="form-container"> 
-    <form> 
-        <div class="form-group"> 
-            <label for="nome">Resposável</label> 
-            <input type="text" id="nome" name="nome">
-         </div>
-         <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email">
-         </div>
-         <div class="form-group"> 
-            <label for="categoria">Item</label> 
-            <select id="categoria" name="categoria"> 
-                <option value="Sacola Pequena">Sacola Pequena</option> 
+    <header class="header">
+        <div class="header-icon">
+            <img src="db7b8b7d-e7c2-4dd6-a55d-76ed85275d8c.png" alt="Ícone" />
+        </div>
+        <div class="header-title">Entrada</div>
+        <div class="button-container">
+            <button class="page-button" onclick="changePage()">Tabela</button>
+        </div>
+    </header>
+    <div class="form-container">
+        <form id="inscription-form">
+            <div class="form-group">
+                <label for="nome">Responsável</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="categoria">Item</label>
+                <select id="categoria" name="categoria">
+                <option value="Sacola Pequena">Sacola Pequena</option>
                 <option value="Sacola Grande">Sacola Grande</option>
                 <option value="Caneca">Caneca</option>
                 <option value="Pasta IF">Pasta IF</option> 
@@ -164,87 +199,96 @@
                 <option value="Bottom">Bottom</option>
                 <option value="Projector">Projector</option>
                 <option value="Rascunho IF">Rascunho IF</option>
-            </select> 
-        </div>
-         <div class="form-group"> 
-            <label for="quantidade">Quantidade</label> 
-            <input type="number" id="quantidade" name="quantidade" required> 
-        </div> 
-<div class="form-group"> 
-            <label for="data">Data</label> 
-            <input type="date" id="data" name="data" step="0.01" required>
+                </select>
             </div>
-        <div class="form-group"> 
-            <label for="descricao">Descrição</label>
-            <textarea id="descricao" name="descricao" rows="4"></textarea>
-         </div>
-         <div class="form-group">
-            <a id="mensagem"></a>
-        </div>  
-            <div class="form-group"> 
-                <button type="submit" class="button">Enviar</button> 
-            </div> 
-        </form> 
-      <h2>Histórico</h2>
-      <ul id="historico"></ul>
-        <script>
-            function changePage(){ window.location.href ="https://almoxeriffe.netlify.app/";
-        }
-           const formulario = document.getElementById('inscription-form'); 
-            const historico = document.getElementById('historico'); 
-            const mensagens = document.getElementById('mensagem'); 
-            const inscricoes = []; 
-            
-            formulario.addEventListener('submit', function(event) { event.preventDefault(); 
-            
-            const nome = formulario.querySelector('#nome').value; 
-            const email = formulario.querySelector('#email').value; 
-            const categoria = formulario.querySelector('#categoria').value; 
-            const quantidade = formulario.querySelector('#quantidade').value; 
-            const data = formulario.querySelector('#data').value; 
-            const descricao = formulario.querySelector('#descricao').value; 
-                                                                   
-            if (nome.length < 4) { 
-                mensagens.textContent = 'O nome de usuário deve ter pelo menos 4 caracteres.'; 
-                mensagens.style.color = 'red'; 
-                return; 
-            } 
-            if (!email.endsWith('@ifsuldeminas.edu.br')) { 
-                mensagens.textContent = 'Por favor, insira um email válido';
-                mensagens.style.color = 'red'; 
-                formulario.querySelector('#email').style.border = '2px solid red'; 
-                return; 
-            } 
-            else { 
-                mensagens.textContent = 'Formulário válido, documento enviado!'; 
-                mensagens.style.color = 'green'; 
-                formulario.querySelector('#email').classList.remove('email-erro');
-            } 
-            const inscricao = { 
-                nome, 
-                email, 
-                categoria, 
-                quantidade, 
-                data, 
-                descricao 
-            }; 
-            inscricoes.push(inscricao); 
-            atualizarHistorico(); 
-                                                                
-            formulario.reset(); 
-            }); 
-            
-            function atualizarHistorico() { 
-                historico.innerHTML = ''; 
-                
-                inscricoes.forEach(inscricao => { 
-                    const li = document.createElement('li'); li.textContent = `Nome: ${inscricao.nome}, Email: ${inscricao.email}, Item: ${inscricao.categoria}, Quantidade: ${inscricao.quantidade}, Data: ${inscricao.data}, Descrição: ${inscricao.descricao}`; 
-                    historico.appendChild(li); 
-                }); 
-            }
-        </script>
+            <div class="form-group">
+                <label for="quantidade">Quantidade</label>
+                <input type="number" id="quantidade" name="quantidade" required>
+            </div>
+            <div class="form-group">
+                <label for="data">Data</label>
+                <input type="date" id="data" name="data" required>
+            </div>
+            <div class="form-group">
+                <label for="descricao">Descrição</label>
+                <textarea id="descricao" name="descricao" rows="4"></textarea>
+            </div>
+            <div class="form-group">
+                <a id="mensagem"></a>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="button">Enviar</button>
+            </div>
+        </form>
     </div>
-</body>
-</html>
+    <div id="historico-popup">
+        <h2>Histórico de Inscrições</h2>
+        <ul id="historico"></ul>
+    </div>
+    <script>
+         function changePage(){ window.location.href ="https://almoxeriffe.netlify.app/";
+        }
+        const formulario = document.getElementById('inscription-form');
+        const historico = document.getElementById('historico');
+        const mensagens = document.getElementById('mensagem');
+        const inscricoes = [];
+
+        formulario.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const nome = formulario.querySelector('#nome').value;
+            const email = formulario.querySelector('#email').value;
+            const categoria = formulario.querySelector('#categoria').value;
+            const quantidade = formulario.querySelector('#quantidade').value;
+            const data = formulario.querySelector('#data').value;
+            const descricao = formulario.querySelector('#descricao').value;
+
+            if (nome.length < 4) {
+                mensagens.textContent = 'O nome de usuário deve ter pelo menos 4 caracteres.';
+                mensagens.style.color = 'red';
+                return;
+            }
+
+            if (!email.endsWith('@ifsuldeminas.edu.br')) {
+                mensagens.textContent = 'Por favor, insira um email válido';
+                mensagens.style.color = 'red';
+                formulario.querySelector('#email').style.border = '2px solid red';
+                return;
+            } else {
+                mensagens.textContent = 'Formulário válido, documento enviado!';
+                mensagens.style.color = 'green';
+                formulario.querySelector('#email').classList.remove('email-erro');
+            }
+
+            const inscricao = {
+                nome,
+                email,
+                categoria,
+                quantidade,
+                data,
+                descricao
+            };
+
+            inscricoes.push(inscricao);
+            atualizarHistorico();
+
+            formulario.reset();
+        });
+
+        function atualizarHistorico() {
+            historico.innerHTML = '';
+
+            inscricoes.forEach(inscricao => {
+                const li = document.createElement('li');
+                li.innerHTML = `<strong>Nome:</strong> ${inscricao.nome} <br> 
+                                <strong>Email:</strong> ${inscricao.email} <br> 
+                                <strong>Item:</strong> ${inscricao.categoria} <br> 
+                                <strong>Quantidade:</strong> ${inscricao.quantidade} <br> 
+                                <strong>Data:</strong> ${inscricao.data} <br> 
+                                <strong>Descrição:</strong> ${inscricao.descricao}`; 
+                historico.appendChild(li);
+            });
+        }
+    </script>
 </body>
 </html>
