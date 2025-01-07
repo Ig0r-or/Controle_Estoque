@@ -185,41 +185,63 @@
                 <button type="submit" class="button">Enviar</button> 
             </div> 
         </form> 
+      <h2>Histórico</h2>
+      <ul id="historico"></ul>
         <script>
             function changePage(){ window.location.href ="https://almoxeriffe.netlify.app/";
         }
-            document.addEventListener('DOMContentLoaded', function () {
-                const formulario = document.querySelector('form');
-                const mensagem = document.getElementById('mensagem');
-        
-                formulario.addEventListener('submit', function (event) {
-                    event.preventDefault();
-        
-                    const username = formulario.querySelector('#nome').value;
-                    const email = formulario.querySelector('#email').value;
-        
-                    if (username.length < 4) {
-                        mensagem.textContent = 'O nome de usuário deve ter pelo menos 4 caracteres.';
-                        mensagem.style.color = 'red';
-                        return;
-                    }
-        
-                    if (!email.endsWith('@ifsuldeminas.edu.br')) { 
-                        mensagem.textContent = 'Por favor, insira um email válido';
-                        mensagem.style.color = 'red';
-                        formulario.querySelector('#email').style.border = '2px solid red';
-                        return;
-                    }
-                    else{
-                        mensagem.textContent = 'Formulário válido, documento enviado!';
-                        mensagem.style.color = 'green';
-                        formulario.querySelector('#email').classList.remove('email-erro');
-                    }
-                    formulario.querySelector('#email').addEventListener('input', function() {
-                        formulario.querySelector('#email').classList.remove('email-erro');
-                    });
-                });
-            });
+           const formulario = document.getElementById('inscription-form'); 
+            const historico = document.getElementById('historico'); 
+            const mensagens = document.getElementById('mensagem'); 
+            const inscricoes = []; 
+            
+            formulario.addEventListener('submit', function(event) { event.preventDefault(); 
+            
+            const nome = formulario.querySelector('#nome').value; 
+            const email = formulario.querySelector('#email').value; 
+            const categoria = formulario.querySelector('#categoria').value; 
+            const quantidade = formulario.querySelector('#quantidade').value; 
+            const data = formulario.querySelector('#data').value; 
+            const descricao = formulario.querySelector('#descricao').value; 
+                                                                   
+            if (nome.length < 4) { 
+                mensagens.textContent = 'O nome de usuário deve ter pelo menos 4 caracteres.'; 
+                mensagens.style.color = 'red'; 
+                return; 
+            } 
+            if (!email.endsWith('@ifsuldeminas.edu.br')) { 
+                mensagens.textContent = 'Por favor, insira um email válido';
+                mensagens.style.color = 'red'; 
+                formulario.querySelector('#email').style.border = '2px solid red'; 
+                return; 
+            } 
+            else { 
+                mensagens.textContent = 'Formulário válido, documento enviado!'; 
+                mensagens.style.color = 'green'; 
+                formulario.querySelector('#email').classList.remove('email-erro');
+            } 
+            const inscricao = { 
+                nome, 
+                email, 
+                categoria, 
+                quantidade, 
+                data, 
+                descricao 
+            }; 
+            inscricoes.push(inscricao); 
+            atualizarHistorico(); 
+                                                                
+            formulario.reset(); 
+            }); 
+            
+            function atualizarHistorico() { 
+                historico.innerHTML = ''; 
+                
+                inscricoes.forEach(inscricao => { 
+                    const li = document.createElement('li'); li.textContent = `Nome: ${inscricao.nome}, Email: ${inscricao.email}, Item: ${inscricao.categoria}, Quantidade: ${inscricao.quantidade}, Data: ${inscricao.data}, Descrição: ${inscricao.descricao}`; 
+                    historico.appendChild(li); 
+                }); 
+            }
         </script>
     </div>
 </body>
