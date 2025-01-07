@@ -78,7 +78,22 @@
     .email-erro {
         border: 2px solid red;
         }
-        </style>
+    .button-container{ 
+        margin-right: 20px; 
+        } 
+    .page-button{ 
+        background-color: rgb(255, 255, 255); 
+        color: #4caf50; 
+        border: none; 
+        padding: 10px 20px; 
+        font-size: 16px; 
+        cursor: pointer; 
+        border-radius: 5px; 
+      } 
+    .page-button:hover{ 
+        background-color: #2196f3; 
+        color: white; 
+      }
       </style>
 </head>
 <body>
@@ -96,6 +111,9 @@
       <img src="db7b8b7d-e7c2-4dd6-a55d-76ed85275d8c.png" alt="Ícone" />
     </div>
     <div class="header-title">Entrada</div>
+      <div class="button-container"> 
+        <button class="page-button" onclick="changePage()">Tabela</button> 
+    </div>
   </header>
   <div class="form-container"> 
     <form> 
@@ -168,6 +186,8 @@
             </div> 
         </form> 
         <script>
+            function changePage(){ window.location.href ="https://almoxeriffe.netlify.app/";
+        }
             document.addEventListener('DOMContentLoaded', function () {
                 const formulario = document.querySelector('form');
                 const mensagem = document.getElementById('mensagem');
