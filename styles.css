@@ -3,6 +3,7 @@
     width: 100%; 
     border: none; 
 }
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -100,7 +101,7 @@ body {
     color: white; 
 }
 
-#historico-popup {
+#entrada-popup, #saida-popup {
     background-color: #fff; 
     padding: 20px; 
     border-radius: 8px; 
@@ -115,7 +116,7 @@ body {
     max-height: 500px;
 }
 
-#historico-popup h2 {
+#entrada-popup h2, #saida-popup h2 {
     margin-top: 0;
 }
 
