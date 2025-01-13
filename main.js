@@ -1,5 +1,5 @@
 const formulario = document.getElementById('inscription-form');
-        const historico = document.getElementById('historico');
+        const historico = document.getElementById('historico-entrada');
         const mensagens = document.getElementById('mensagem');
         const itemsContainer = document.getElementById('items-container');
         const inscricoes = [];
