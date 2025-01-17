@@ -45,10 +45,10 @@
             };
 
             inscricoes.push(inscricao);
-            atualizarHistorico();
+            atualizarHistoricoEntrada();
             formularioEntrada.reset();
             itemsContainer.innerHTML = '';
-            addItem();
+            addItemEntrada();
         });
 //Função pra adicionar Item
     function addItemEntrada() {
@@ -124,9 +124,7 @@
 
     formularioEntrada.addEventListener('submit', function (event) {
         event.preventDefault();
-        // Lógica do formulário de entrada
         atualizarHistoricoEntrada();
-        addItemEntrada();
     });
         
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -148,22 +146,22 @@ formularioSaida.addEventListener('submit', function (event) {
     const descricao = formularioSaida.querySelector('[name="descricao"]').value;
 
     if (nome.length < 4) {
-        mensagens.textContent = 'O nome de usuário deve ter pelo menos 4 caracteres.';
-        mensagens.style.color = 'red';
+        mensagens2.textContent = 'O nome de usuário deve ter pelo menos 4 caracteres.';
+        mensagens2.style.color = 'red';
         return;
     }
     if (!email.endsWith('@ifsuldeminas.edu.br')) {
-        mensagens.textContent = 'Por favor, insira um email válido';
-        mensagens.style.color = 'red';
+        mensagens2.textContent = 'Por favor, insira um email válido';
+        mensagens2.style.color = 'red';
         formularioSaida.querySelector('#email').style.border = '2px solid red';
         return;
     } else {
-        mensagens.textContent = 'Formulário válido, documento enviado!';
-        mensagens.style.color = 'green';
+        mensagens2.textContent = 'Formulário válido, documento enviado!';
+        mensagens2.style.color = 'green';
         formularioSaida.querySelector('#email').classList.remove('email-erro');
     }
 
-    const items = [...itemsContainer.querySelectorAll('.item')].map(item => {
+    const items = [...itemsContainer2.querySelectorAll('.item')].map(item => {
         return {
             categoria: item.querySelector('[name="categoria"]').value,
             quantidade: item.querySelector('[name="quantidade"]').value,
@@ -179,10 +177,10 @@ formularioSaida.addEventListener('submit', function (event) {
     };
 
     inscricoes2.push(inscricao);
-    atualizarHistorico();
+    atualizarHistoricoSaida();
     formularioSaida.reset();
     itemsContainer2.innerHTML = '';
-    addItem();
+    addItemSaida();
 });
 //Função pra adicionar Item
 function addItemSaida() {
@@ -261,5 +259,4 @@ formularioSaida.addEventListener('submit', function (event) {
 event.preventDefault();
 // Lógica do formulário de saída
 atualizarHistoricoSaida();
-addItemSaida();
 });
