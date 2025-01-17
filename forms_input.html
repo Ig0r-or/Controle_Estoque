@@ -16,6 +16,8 @@
             <button class="page-button" onclick="changePage()">Tabela</button>
         </div>
     </header>
+<!----------------------------------------------------------------------Primeiro Formulário--------------------------------------------------------------------------->
+
     <div class="form-container">
         <form id="inscription-form">
             <div class="form-group">
@@ -84,7 +86,7 @@
                 <textarea name="descricao" rows="4"></textarea>
             </div>
             <div class="form-group">
-                <button type="button" onclick="addItem()">Adicionar Item</button>
+                <button type="button" onclick="addItemEntrada()">Adicionar Item</button>
             </div>
             <div class="form-group">
                 <a id="mensagem"></a>
@@ -98,8 +100,10 @@
         <h2>Entrada &uarr;</h2> 
         <ul id="historico-entrada"></ul> 
     </div> 
-    <div class="form-container">
-        <form id="inscription-form">
+<!----------------------------------------------------------------------Segundo Formulário--------------------------------------------------------------------------->
+    
+    <div class="form-container-saida">
+        <form id="inscription-form-saida">
             <div class="form-group">
                 <label for="nome">Responsável</label>
                 <input type="text" id="nome" name="nome" required>
@@ -112,8 +116,8 @@
                 <label for="data">Data</label>
                 <input type="date" id="data" name="data" required>
             </div>
-            <div id="items-container">
-                <div class="item">
+            <div id="items-container-saida">
+                <div class="item-saida">
                     <div class="form-group">
                         <label for="categoria">Item</label>
                         <select name="categoria">
@@ -166,10 +170,10 @@
                 <textarea name="descricao" rows="4"></textarea>
             </div>
             <div class="form-group">
-                <button type="button" onclick="addItem()">Adicionar Item</button>
+                <button type="button" onclick="addItemSaida()">Adicionar Item</button>
             </div>
             <div class="form-group">
-                <a id="mensagem"></a>
+                <a id="mensagem-saida"></a>
             </div>
             <div class="form-group">
                 <button type="submit" class="button">Enviar</button>
