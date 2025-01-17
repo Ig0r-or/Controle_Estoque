@@ -77,7 +77,18 @@ body {
 .form-group .button:hover { 
     background-color: #45a049; 
 }
-
+.form-container-saida { 
+    background-color: #fff; 
+    padding: 20px; 
+    border-radius: 8px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    width: 30%; 
+    max-width: 300px; 
+    margin-top: 40px;
+    margin-left: 40px;
+    display: inline-block;
+    vertical-align: top;
+}
 .email-erro {
     border: 2px solid red;
 }
@@ -136,3 +147,20 @@ body {
 #historico-entrada li:nth-child(odd) {
     background-color: #ffffff;
 }
+#historico-saida {
+    list-style-type: none;
+    padding: 0;
+}
+
+#historico-saida li {
+    background-color: #f4f4f4;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+#historico-saida li:nth-child(odd) {
+    background-color: #ffffff;
+}
+
