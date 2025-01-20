@@ -161,14 +161,14 @@ formularioSaida.addEventListener('submit', function (event) {
         formularioSaida.querySelector('#email').classList.remove('email-erro');
     }
 
-    const items = [...itemsContainer2.querySelectorAll('.item')].map(item => {
+    const items = [...itemsContainer2.querySelectorAll('.item-saida')].map(item => {
         return {
             categoria: item.querySelector('[name="categoria"]').value,
             quantidade: item.querySelector('[name="quantidade"]').value,
         };
     });
 
-    const inscricao = {
+    const inscricao2 = {
         nome,
         email,
         data,
@@ -176,7 +176,7 @@ formularioSaida.addEventListener('submit', function (event) {
         descricao,
     };
 
-    inscricoes2.push(inscricao);
+    inscricoes2.push(inscricao2);
     atualizarHistoricoSaida();
     formularioSaida.reset();
     itemsContainer2.innerHTML = '';
@@ -185,7 +185,7 @@ formularioSaida.addEventListener('submit', function (event) {
 //Função pra adicionar Item
 function addItemSaida() {
 const itemDiv = document.createElement('div');
-itemDiv.classList.add('item');
+itemDiv.classList.add('item-saida');
 itemDiv.innerHTML = `
 <div class="form-group">
     <label for="categoria">Item</label>
@@ -238,13 +238,13 @@ itemsContainer2.appendChild(itemDiv);
 
 function atualizarHistoricoSaida() {
 historicoSaida.innerHTML = '';
-inscricoes2.forEach(inscricao => {
+inscricoes2.forEach(inscricao2 => {
 const li = document.createElement('li');
-li.innerHTML = `<strong>Nome:</strong> ${inscricao.nome} <br>
-                <strong>Email:</strong> ${inscricao.email} <br>
-                <strong>Data:</strong> ${inscricao.data} <br>
-                <strong>Descrição:</strong> ${inscricao.descricao} <br>`;
-inscricao.items.forEach(item => {
+li.innerHTML = `<strong>Nome:</strong> ${inscricao2.nome} <br>
+                <strong>Email:</strong> ${inscricao2.email} <br>
+                <strong>Data:</strong> ${inscricao2.data} <br>
+                <strong>Descrição:</strong> ${inscricao2.descricao} <br>`;
+inscricao2.items.forEach(item => {
     li.innerHTML += `
         <strong>Item:</strong> ${item.categoria} <br>
         <strong>Quantidade:</strong> ${item.quantidade} <br>
@@ -257,6 +257,5 @@ historicoSaida.appendChild(li);
 
 formularioSaida.addEventListener('submit', function (event) {
 event.preventDefault();
-// Lógica do formulário de saída
 atualizarHistoricoSaida();
 });
