@@ -243,7 +243,7 @@ const li = document.createElement('li');
 li.innerHTML = `<strong>Nome:</strong> ${inscricao2.nome} <br>
                 <strong>Email:</strong> ${inscricao2.email} <br>
                 <strong>Data:</strong> ${inscricao2.data} <br>
-                <strong>Descrição:</strong> ${inscricao2.descricao} <br>`;
+                <strong>Destino:</strong> ${inscricao2.descricao} <br>`;
 inscricao2.items.forEach(item => {
     li.innerHTML += `
         <strong>Item:</strong> ${item.categoria} <br>
