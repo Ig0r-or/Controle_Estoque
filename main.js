@@ -259,3 +259,23 @@ formularioSaida.addEventListener('submit', function (event) {
 event.preventDefault();
 atualizarHistoricoSaida();
 });
+//----------------------------------------------------------------------------------------------------------------------------------
+function updateCell(element) {
+    var newValue = element.innerText;
+    var cellIndex = element.cellIndex;
+    var rowIndex = element.parentNode.rowIndex;
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "/update-cell", true);
+    xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState == 4 && xhr.status == 200) {
+        console.log('Dados atualizados com sucesso!');
+      }
+    };
+    xhr.send(JSON.stringify({
+      row: rowIndex,
+      cell: cellIndex,
+      value: newValue
+    }));
+  }
